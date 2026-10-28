@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anita Desai Official</title>
+    <!-- Premium Google Web Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #030a16; /* Deep midnight canvas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #061124; /* UI container background */
+            width: 100%;
+            max-width: 440px;
+            border-radius: 40px;
+            padding: 40px 24px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+        }
+
+        /* Avatar Container & Verified Badge Layout */
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #1a365d;
+            background-color: #111; /* Fallback if link breaks */
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background-color: #3b82f6; /* Telegram verified blue tint */
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #061124;
+        }
+
+        .verified-badge svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+        }
+
+        /* Hero Typography Profile Titles */
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .sub-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #5c93ed;
+            margin-top: 4px;
+            margin-bottom: 22px;
+        }
+
+        /* Headline Pill Badge Component */
+        .expert-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: rgba(26, 54, 93, 0.4);
+            border: 1px solid rgba(92, 147, 237, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #8da2c4;
+            margin-bottom: 35px;
+        }
+
+        /* Metric Highlights Triple Grid Block */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .grid-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 18px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-top {
+            font-size: 20px;
+            font-weight: 700;
+            color: #5c93ed;
+        }
+
+        .grid-bottom {
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: #4f617d;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* Main Conversion Action Anchor Button */
+        .cta-btn {
+            background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 12px 30px rgba(29, 78, 216, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(29, 78, 216, 0.5);
+        }
+
+        .cta-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* Vertical Core Feature Row Elements */
+        .list-container {
+            text-align: left;
+            padding: 0 10px;
+            margin-bottom: 35px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .icon-box {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .list-text {
+            font-size: 14px;
+            color: #8da2c4;
+            font-weight: 500;
+        }
+
+        /* Auxiliary Validation Tags Section */
+        .bottom-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .mini-tag {
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            color: #4f617d;
+            font-weight: 500;
+        }
+
+        /* Horizontal Spacer Vector Split */
+        .line {
+            border: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.06);
+            margin-bottom: 25px;
+        }
+
+        /* Agency Brand Info Panel Footer Section */
+        .footer-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .footer-left {
+            font-size: 11px;
+            color: #33435c;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .agency-badge {
+            border: 1px solid rgba(92, 147, 237, 0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #5c93ed;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        
+        <!-- Profile Picture & Verified Check Assembly -->
+        <!-- ACTION REQUIRED: Exchange 'avatar.jpg' with your explicit photo resource web link -->
+        <div class="profile-container">
+            <img src="avatar.jpg" alt="Anita Desai" class="profile-img">
+            <div class="verified-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+        </div>
+
+        <!-- Channel Headings -->
+        <h1 class="main-title">ANITA DESAI</h1>
+        <h2 class="sub-title">OFFICIAL</h2>
+
+        <!-- Role Badge Info Line -->
+        <div class="expert-tag">
+            <span style="color: #5c93ed;">✦</span> Index Trading Expert
+        </div>
+
+        <!-- Metric Parameter Matrix Summary Boxes -->
+        <div class="features-grid">
+            <div class="grid-box">
+                <span class="grid-top">24/7</span>
+                <span class="grid-bottom">UPDATES</span>
+            </div>
+            <div class="grid-box">
+                <span class="grid-top" style="color: #ffffff;">Free</span>
+                <span class="grid-bottom">TO JOIN</span>
+            </div>
+            <div class="grid-box">
+                <span class="grid-top" style="color: #ffffff;">Live</span>
+                <span class="grid-bottom">CALLS</span>
+            </div>
+        </div>
+
+        <!-- Interactive Direct Gateway Connect Link -->
+        <!-- ACTION REQUIRED: Insert your exact destination URL path configuration directly inside href="..." below -->
+        <a href="https://t.me" class="cta-btn" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            JOIN TELEGRAM CHANNEL
+        </a>
+
+        <!-- Profile Checklist Core Perks Meta Container -->
+        <div class="list-container">
+            <div class="list-item">
+                <span class="icon-box">📊</span>
+                <span class="list-text">Market Insights & Discussions</span>
+            </div>
+            <div class="list-item">
+                <span class="icon-box">🎓</span>
+                <span class="list-text">Learn with Experts</span>
+            </div>
+            <div class="list-item">
+                <span class="icon-box">⚡</span>
+                <span class="list-text">Practical Trading Strategies</span>
+            </div>
+        </div>
+
+        <!-- Bottom Proof / Validation Badges Container -->
+        <div class="bottom-tags">
